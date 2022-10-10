@@ -1,12 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhost/blog-data-test");
-
 const BlogSchema = new Schema({
   title: String,
   message: String,
+  dateCreated: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const Blog = mongoose.model('blog', BlogSchema);
+const Blog = mongoose.model("blog", BlogSchema);
 
+module.exports = Blog;
