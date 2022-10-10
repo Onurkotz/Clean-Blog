@@ -21,6 +21,7 @@ app.get('/', postControllers.getPosts);
 app.get('/about', pageControllers.getAbout);
 app.get('/add_post', postControllers.addPost);
 app.post('/blogs', postControllers.createPost);
+app.get('/post/:id', postControllers.getPostPage);
 
 // PORT
 

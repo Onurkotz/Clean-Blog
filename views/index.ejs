@@ -25,28 +25,20 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-         
           <% for(i = 0; i < blogs.length; i ++) { %>
-         
+
           <div class="post-preview">
             <a href="/post/<%= blogs[i]._id %>">
-              <h2 class="post-title">
-                <%= blogs[i].title %>
-              </h2>
-              <h3 class="post-subtitle">
-                <%= blogs[i].message %>
-              </h3>
+              <h2 class="post-title"><%= blogs[i].title %></h2>
+              <h3 class="post-subtitle"><%= blogs[i].message %></h3>
             </a>
-            <p class="post-meta">
-              Posted on
-              <%= blogs[i].dateCreated %>
-            </p>
+            <p class="post-meta">Posted on <%= blogs[i].dateCreated %></p>
           </div>
-         
+
           <% } %>
-          
+
           <hr />
-          
+
           <!-- Pager -->
           <!-- <div class="clearfix">
             <a class="btn btn-primary float-right" href="#"

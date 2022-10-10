@@ -1,7 +1,7 @@
 const Blog = require("../models/Blog");
 
 exports.getPosts = async (req, res) => {
-  const blogs = await Blog.find({}).sort('-dateCreated');
+  const blogs = await Blog.find({}).sort("-dateCreated");
   res.render("index", {
     blogs,
   });
@@ -14,4 +14,11 @@ exports.addPost = async (req, res) => {
 exports.createPost = async (req, res) => {
   await Blog.create(req.body);
   res.redirect("/");
+};
+
+exports.getPostPage = async (req, res) => {
+  const postID = await Blog.findById(req.params.id);
+  res.render("post", {
+    blog: postID,
+  });
 };
