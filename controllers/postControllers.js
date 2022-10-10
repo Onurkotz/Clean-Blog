@@ -22,3 +22,8 @@ exports.getPostPage = async (req, res) => {
     blog: postID,
   });
 };
+
+exports.deletePost = async (req, res) => {
+  await Blog.findByIdAndRemove(req.params.id);
+  res.redirect("/");
+};

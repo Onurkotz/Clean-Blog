@@ -1,7 +1,8 @@
 const express = require("express");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 
 const postControllers = require("./controllers/postControllers");
 const pageControllers = require("./controllers/pageControllers");
@@ -14,14 +15,20 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  methodOverride("_method", {
+    methods: ["POST", "GET"],
+  })
+);
 
 // ROUTES
 
-app.get('/', postControllers.getPosts);
-app.get('/about', pageControllers.getAbout);
-app.get('/add_post', postControllers.addPost);
-app.post('/blogs', postControllers.createPost);
-app.get('/post/:id', postControllers.getPostPage);
+app.get("/", postControllers.getPosts);
+app.get("/about", pageControllers.getAbout);
+app.get("/add_post", postControllers.addPost);
+app.post("/blogs", postControllers.createPost);
+app.get("/post/:id", postControllers.getPostPage);
+app.delete("/post/:id", postControllers.deletePost);
 
 // PORT
 
