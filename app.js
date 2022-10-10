@@ -1,10 +1,12 @@
 const express = require("express");
 const ejs = require("ejs");
+const mongoose = require('mongoose');
 
 const postControllers = require("./controllers/postControllers");
 const pageControllers = require("./controllers/pageControllers");
 
 const app = express();
+
 app.set("view engine", "ejs");
 
 // MIDDLEWARES
