@@ -29,6 +29,8 @@ app.get("/add_post", postControllers.addPost);
 app.post("/blogs", postControllers.createPost);
 app.get("/post/:id", postControllers.getPostPage);
 app.delete("/post/:id", postControllers.deletePost);
+app.get("/post/edit/:id", postControllers.getUpdatePage);
+app.put("/post/:id", postControllers.updatePost);
 
 // PORT
 
