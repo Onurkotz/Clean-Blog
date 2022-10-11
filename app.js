@@ -25,11 +25,11 @@ app.use(
 
 app.get("/", postControllers.getPosts);
 app.get("/about", pageControllers.getAbout);
-app.get("/add_post", postControllers.addPost);
-app.post("/blogs", postControllers.createPost);
+app.get("/add_post", pageControllers.addPost);
 app.get("/post/:id", postControllers.getPostPage);
-app.delete("/post/:id", postControllers.deletePost);
 app.get("/post/edit/:id", postControllers.getUpdatePage);
+app.post("/blogs", postControllers.createPost);
+app.delete("/post/:id", postControllers.deletePost);
 app.put("/post/:id", postControllers.updatePost);
 
 // PORT

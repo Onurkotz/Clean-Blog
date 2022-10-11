@@ -7,10 +7,6 @@ exports.getPosts = async (req, res) => {
   });
 };
 
-exports.addPost = async (req, res) => {
-  await res.render("add_post");
-};
-
 exports.createPost = async (req, res) => {
   await Blog.create(req.body);
   res.redirect("/");
@@ -36,9 +32,9 @@ exports.getUpdatePage = async (req, res) => {
 };
 
 exports.updatePost = async (req, res) => {
-  const postUp = await Photo.findOne({ _id: req.params.id });
+  const postUp = await Blog.findOne({ _id: req.params.id });
   postUp.title = req.body.title;
-  postUp.description = req.body.message;
+  postUp.message = req.body.message;
   postUp.save();
   res.redirect(`/`);
 };
