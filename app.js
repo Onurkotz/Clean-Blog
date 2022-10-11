@@ -8,7 +8,16 @@ const postControllers = require("./controllers/postControllers");
 const pageControllers = require("./controllers/pageControllers");
 
 const app = express();
-mongoose.connect("mongodb://localhost/blog-data-test");
+mongoose
+  .connect(
+    "mongodb+srv://onurkoc:KODV0sr95W8z8r33@cluster0.d6cuxty.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("Database connected.");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 app.set("view engine", "ejs");
 
 // MIDDLEWARES
