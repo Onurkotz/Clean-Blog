@@ -18,4 +18,4 @@ MongoDB Atlas is used as the database cloud. For hosting, the project is pushed 
 
 https://clean-blog-ok.herokuapp.com/
 <br><br>
-<img src="./public/qr.jpg"></img> -->
+
